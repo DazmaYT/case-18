@@ -1,4 +1,3 @@
-```js
 const TelegramBot = require('node-telegram-bot-api');
 
 const TOKEN = '8609150287:AAGJQxbBw41O4TG9Ys1PqTOQFF5l-DPCjhQ';
@@ -84,4 +83,3 @@ bot.onText(/\/start/, async (msg) => {
 });
 
 console.log('🕵️ Бот "Дело №18" запущен...');
-```
