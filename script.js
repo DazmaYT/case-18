@@ -537,147 +537,7 @@ const errorText =
     $("errorText");
 
 
-
-
-
-    ////////////////////////////////////
-    ///////////////////////////////////
-
-    // =====================================================
-// QR SCANNER — КАМЕРА ЗАПУСКАЕТСЯ ОДИН РАЗ
-// =====================================================
-
-let qrScanner = null;
-let qrScannerRunning = false;
-let lastScannedQR = null;
-let lastScanTime = 0;
-
-function openQRScanner() {
-    const scannerElement = document.getElementById("qr-reader");
-
-    if (!scannerElement) {
-        console.error("❌ #qr-reader не найден");
-        return;
-    }
-
-    // Уже работает — ничего не запускаем повторно
-    if (qrScannerRunning) {
-        return;
-    }
-
-    if (typeof Html5Qrcode === "undefined") {
-        console.error("❌ Html5Qrcode не загружен");
-        return;
-    }
-
-    qrScanner = new Html5Qrcode("qr-reader");
-
-    qrScanner
-        .start(
-            {
-                facingMode: "environment"
-            },
-            {
-                fps: 10,
-                qrbox: {
-                    width: 250,
-                    height: 250
-                }
-            },
-            handleQRResult,
-            () => {
-                // Ошибки отдельных кадров игнорируем
-            }
-        )
-        .then(() => {
-            qrScannerRunning = true;
-            console.log("📷 Камера запущена");
-        })
-        .catch(error => {
-            console.error("❌ Не удалось запустить камеру:", error);
-        });
-}
-
-
-function handleQRResult(decodedText) {
-
-    const now = Date.now();
-
-    // Не обрабатываем один и тот же QR несколько раз подряд
-    if (
-        decodedText === lastScannedQR &&
-        now - lastScanTime < 2000
-    ) {
-        return;
-    }
-
-    lastScannedQR = decodedText;
-    lastScanTime = now;
-
-    console.log("📷 QR:", decodedText);
-
-    const expectedQR =
-        `CASE18-${state.currentStage}`;
-
-    // Неправильный QR
-    if (decodedText !== expectedQR) {
-
-        console.log(
-            `❌ Неверный QR. Нужен ${expectedQR}`
-        );
-
-        showQRMessage("❌ Это не тот QR-код");
-
-        return;
-    }
-
-    // Правильный QR
-    console.log("✅ Правильный QR");
-
-    showQRMessage("✅ ДОСТУП ПОДТВЕРЖДЁН");
-
-    // Переходим на следующий этап
-    setTimeout(() => {
-
-        if (state.currentStage < 18) {
-
-            state.completed.push(
-                state.currentStage
-            );
-
-            state.currentStage++;
-
-            saveState();
-            renderPlayer();
-        }
-
-    }, 800);
-}
-
-
-function showQRMessage(text) {
-
-    const message =
-        document.getElementById("qr-message");
-
-    if (message) {
-        message.textContent = text;
-    }
-}
-
-
-// Останавливаем камеру только когда реально уходим со страницы
-window.addEventListener("beforeunload", () => {
-
-    if (qrScanner && qrScannerRunning) {
-
-        qrScanner
-            .stop()
-            .catch(() => {});
-
-        qrScannerRunning = false;
-    }
-});
+    
 /* =========================================================
    AUDIO
 ========================================================= */
@@ -1824,19 +1684,21 @@ function init() {
    PAGE VISIBILITY
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "visibilitychange",
+    () => {
 
-    const scanButton =
-        document.getElementById("scanButton");
+        if (
+            document.hidden &&
+            scannerRunning
+        ) {
 
-    if (scanButton) {
-        scanButton.addEventListener(
-            "click",
-            openQRScanner
-        );
+            stopScanner();
+
+        }
+
     }
-
-});
+);
 
 
 /* =========================================================
