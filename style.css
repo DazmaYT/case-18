@@ -1,5 +1,3 @@
-/* style.css */
-
 :root {
     --bg: #050507;
     --bg-2: #0a0a0f;
@@ -22,6 +20,11 @@
 
     --radius: 26px;
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -64,16 +67,15 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    BACKGROUND
-===================================== */
+========================================================= */
 
 .background {
     position: fixed;
     inset: 0;
 
     overflow: hidden;
-
     pointer-events: none;
 
     background:
@@ -176,6 +178,7 @@ button:active {
             translate(30px,-35px)
             scale(1.15);
     }
+
 }
 
 #particles {
@@ -218,6 +221,7 @@ button:active {
         transform: translateY(-10vh);
         opacity: 0;
     }
+
 }
 
 .noise {
@@ -235,9 +239,9 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    APP
-===================================== */
+========================================================= */
 
 .app {
     position: relative;
@@ -258,12 +262,13 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    TOPBAR
-===================================== */
+========================================================= */
 
 .topbar {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -274,10 +279,13 @@ button:active {
 
 .brand {
     display: flex;
+
     align-items: center;
+
     gap: 9px;
 
     font-size: 12px;
+
     font-weight: 800;
 
     letter-spacing: .18em;
@@ -295,7 +303,8 @@ button:active {
         0 0 10px var(--red),
         0 0 25px rgba(255,23,79,.5);
 
-    animation: pulse 2s infinite;
+    animation:
+        pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -304,6 +313,7 @@ button:active {
         opacity: .45;
         transform: scale(.7);
     }
+
 }
 
 .icon-button {
@@ -311,6 +321,7 @@ button:active {
     height: 40px;
 
     border: 1px solid var(--border);
+
     border-radius: 13px;
 
     background: rgba(255,255,255,.045);
@@ -323,9 +334,9 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    SCREEN
-===================================== */
+========================================================= */
 
 .screen {
     display: none;
@@ -336,11 +347,13 @@ button:active {
             100px
         );
 
-    animation: screenIn .45s ease;
+    animation:
+        screenIn .45s ease;
 }
 
 .screen.active {
     display: flex;
+
     flex-direction: column;
 }
 
@@ -348,19 +361,22 @@ button:active {
 
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform:
+            translateY(15px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
+
 }
 
 
-/* =====================================
+/* =========================================================
    GLASS
-===================================== */
+========================================================= */
 
 .glass {
     background:
@@ -375,13 +391,14 @@ button:active {
     box-shadow: var(--shadow);
 
     backdrop-filter: blur(24px);
+
     -webkit-backdrop-filter: blur(24px);
 }
 
 
-/* =====================================
+/* =========================================================
    START
-===================================== */
+========================================================= */
 
 #startScreen {
     justify-content: center;
@@ -410,7 +427,8 @@ button:active {
     top: -130px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     background: var(--red);
 
@@ -426,7 +444,9 @@ button:active {
 
     border-radius: 999px;
 
-    border: 1px solid rgba(255,23,79,.35);
+    border:
+        1px solid
+        rgba(255,23,79,.35);
 
     color: var(--red);
 
@@ -434,6 +454,7 @@ button:active {
         rgba(255,23,79,.07);
 
     font-size: 9px;
+
     font-weight: 900;
 
     letter-spacing: .24em;
@@ -460,6 +481,7 @@ button:active {
         );
 
     -webkit-background-clip: text;
+
     color: transparent;
 }
 
@@ -508,7 +530,9 @@ button:active {
 .hero-description {
     max-width: 430px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto
+        25px;
 
     color: var(--muted);
 
@@ -516,6 +540,11 @@ button:active {
 
     line-height: 1.65;
 }
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .primary-button,
 .secondary-button,
@@ -539,6 +568,7 @@ button:active {
 
 .primary-button {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -564,6 +594,9 @@ button:active {
     box-shadow:
         0 15px 45px
         rgba(255,0,75,.42);
+
+    transform:
+        translateY(-2px);
 }
 
 .secondary-button {
@@ -571,13 +604,17 @@ button:active {
 
     color: white;
 
-    background: rgba(255,255,255,.06);
+    background:
+        rgba(255,255,255,.06);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 }
 
 .status-line {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -607,12 +644,13 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    GAME HEADER
-===================================== */
+========================================================= */
 
 .case-header {
     display: flex;
+
     align-items: flex-end;
     justify-content: space-between;
 
@@ -650,9 +688,9 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    PROGRESS
-===================================== */
+========================================================= */
 
 .progress-card {
     padding: 15px;
@@ -664,6 +702,7 @@ button:active {
 
 .progress-top {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -672,6 +711,7 @@ button:active {
     color: #797985;
 
     font-size: 8px;
+
     font-weight: 900;
 
     letter-spacing: .13em;
@@ -708,10 +748,12 @@ button:active {
         );
 
     box-shadow:
-        0 0 15px rgba(255,23,79,.7);
+        0 0 15px
+        rgba(255,23,79,.7);
 
     transition:
-        width .6s cubic-bezier(.2,.8,.2,1);
+        width .6s
+        cubic-bezier(.2,.8,.2,1);
 }
 
 .progress-blocks {
@@ -740,13 +782,14 @@ button:active {
     background: var(--red);
 
     box-shadow:
-        0 0 6px rgba(255,23,79,.5);
+        0 0 6px
+        rgba(255,23,79,.5);
 }
 
 
-/* =====================================
-   STAGE CARD
-===================================== */
+/* =========================================================
+   STAGE
+========================================================= */
 
 .stage-card {
     position: relative;
@@ -778,8 +821,47 @@ button:active {
     opacity: .12;
 }
 
+.stage-transition {
+    animation:
+        neonStage .65s ease;
+}
+
+@keyframes neonStage {
+
+    0% {
+        opacity: .2;
+
+        transform:
+            translateY(15px)
+            scale(.98);
+
+        box-shadow:
+            0 0 0
+            rgba(255,23,79,0);
+    }
+
+    45% {
+        box-shadow:
+            0 0 45px
+            rgba(255,23,79,.3);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        box-shadow:
+            var(--shadow);
+    }
+
+}
+
 .stage-top {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -828,14 +910,6 @@ button:active {
     color: white;
 }
 
-.stage-content .warning {
-    color: #ff6685;
-}
-
-.stage-content .accent {
-    color: var(--red);
-}
-
 .hint-box {
     margin-top: 20px;
 
@@ -875,6 +949,7 @@ button:active {
 
 .scan-button {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -902,16 +977,21 @@ button:active {
     box-shadow:
         0 15px 45px
         rgba(255,23,79,.4);
+
+    transform:
+        translateY(-2px);
 }
 
 .scan-icon {
     font-size: 23px;
 
-    transform: rotate(90deg);
+    transform:
+        rotate(90deg);
 }
 
 .bottom-info {
     display: flex;
+
     justify-content: space-between;
 
     margin-top: 13px;
@@ -926,9 +1006,65 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
+   RESET BUTTON
+========================================================= */
+
+.reset-button {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 14px 18px;
+
+    border:
+        1px solid
+        rgba(255,70,90,.35);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,45,65,.07);
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform .2s ease,
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.reset-button:hover {
+    color: white;
+
+    background:
+        rgba(255,45,65,.14);
+
+    border-color:
+        rgba(255,70,90,.7);
+
+    box-shadow:
+        0 0 20px
+        rgba(255,45,65,.18);
+}
+
+
+/* =========================================================
    SCANNER
-===================================== */
+========================================================= */
 
 .scanner-screen {
     justify-content: center;
@@ -936,6 +1072,7 @@ button:active {
 
 .scanner-header {
     display: flex;
+
     align-items: center;
 
     gap: 15px;
@@ -957,9 +1094,12 @@ button:active {
 
     color: white;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
-    background: rgba(255,255,255,.05);
+    background:
+        rgba(255,255,255,.05);
 
     cursor: pointer;
 
@@ -1030,28 +1170,32 @@ button:active {
     top: 0;
     left: 0;
 
-    border-width: 3px 0 0 3px;
+    border-width:
+        3px 0 0 3px;
 }
 
 .corner.tr {
     top: 0;
     right: 0;
 
-    border-width: 3px 3px 0 0;
+    border-width:
+        3px 3px 0 0;
 }
 
 .corner.bl {
     bottom: 0;
     left: 0;
 
-    border-width: 0 0 3px 3px;
+    border-width:
+        0 0 3px 3px;
 }
 
 .corner.br {
     bottom: 0;
     right: 0;
 
-    border-width: 0 3px 3px 0;
+    border-width:
+        0 3px 3px 0;
 }
 
 .scan-line {
@@ -1084,6 +1228,7 @@ button:active {
     50% {
         top: 90%;
     }
+
 }
 
 .scanner-text {
@@ -1111,12 +1256,13 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    ACCESS
-===================================== */
+========================================================= */
 
 .access-screen {
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -1138,30 +1284,40 @@ button:active {
 
     from {
         opacity: 0;
-        transform: scale(.8);
+
+        transform:
+            scale(.8);
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
+
 }
 
 .access-symbol {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     width: 90px;
     height: 90px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto
+        25px;
 
     border-radius: 50%;
 
     color: white;
 
-    border: 2px solid var(--red);
+    border:
+        2px solid
+        var(--red);
 
     background:
         rgba(255,23,79,.08);
@@ -1169,6 +1325,7 @@ button:active {
     box-shadow:
         0 0 30px
         rgba(255,23,79,.4),
+
         inset 0 0 25px
         rgba(255,23,79,.12);
 
@@ -1184,9 +1341,11 @@ button:active {
         box-shadow:
             0 0 60px
             rgba(255,23,79,.65),
+
             inset 0 0 35px
             rgba(255,23,79,.18);
     }
+
 }
 
 .access-small {
@@ -1241,9 +1400,9 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    TOAST
-===================================== */
+========================================================= */
 
 .toast {
     position: fixed;
@@ -1262,6 +1421,7 @@ button:active {
     margin: auto;
 
     display: flex;
+
     align-items: center;
 
     gap: 12px;
@@ -1287,7 +1447,8 @@ button:active {
 }
 
 .toast.show {
-    transform: translateY(0);
+    transform:
+        translateY(0);
 
     opacity: 1;
 }
@@ -1308,9 +1469,294 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
+   SECRET FINAL
+========================================================= */
+
+.secret-final-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 140;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,23,79,.2),
+            transparent 40%
+        ),
+        #050507;
+}
+
+.secret-final-screen::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 3px,
+            rgba(255,255,255,.015) 4px
+        );
+
+    animation:
+        secretScan 1.2s linear infinite;
+}
+
+@keyframes secretScan {
+
+    from {
+        transform:
+            translateY(-10px);
+    }
+
+    to {
+        transform:
+            translateY(10px);
+    }
+
+}
+
+.secret-number {
+    position: relative;
+
+    font-size: 150px;
+
+    line-height: .8;
+
+    font-weight: 950;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px var(--red),
+        0 0 70px var(--red),
+        0 0 140px rgba(255,23,79,.7);
+
+    animation:
+        secretNumber 2.5s ease forwards;
+}
+
+@keyframes secretNumber {
+
+    0% {
+        opacity: 0;
+        transform:
+            scale(2.5);
+        filter: blur(20px);
+    }
+
+    25% {
+        opacity: 1;
+        transform:
+            scale(1);
+        filter: blur(0);
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            scale(.7);
+    }
+
+}
+
+.secret-line {
+    position: relative;
+
+    width: 160px;
+    height: 2px;
+
+    margin-top: 30px;
+
+    background: var(--red);
+
+    box-shadow:
+        0 0 20px var(--red);
+}
+
+.secret-text {
+    position: relative;
+
+    margin-top: 15px;
+
+    color: #777783;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: .35em;
+}
+
+
+/* =========================================================
+   STAGE 18
+========================================================= */
+
+.stage18-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 130;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255,23,79,.25),
+            transparent 38%
+        ),
+        #050507;
+}
+
+.stage18-content {
+    width: 100%;
+    max-width: 470px;
+
+    animation:
+        stage18In 1s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes stage18In {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+.stage18-top {
+    color: var(--red);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: .3em;
+}
+
+.stage18-number {
+    margin-top: 15px;
+
+    font-size: 120px;
+
+    line-height: .8;
+
+    font-weight: 950;
+
+    background:
+        linear-gradient(
+            180deg,
+            white,
+            #5b5b66
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(255,23,79,.3)
+        );
+}
+
+.stage18-small {
+    margin-top: 20px;
+
+    color: #777783;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: .3em;
+}
+
+.stage18-content h1 {
+    margin-top: 14px;
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    letter-spacing: -.05em;
+}
+
+.stage18-content h1 span {
+    display: block;
+
+    color: var(--red);
+
+    margin-top: 5px;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,23,79,.5);
+}
+
+.stage18-content p {
+    margin:
+        22px auto
+        25px;
+
+    max-width: 400px;
+
+    color: #aaaab5;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.stage18-content .primary-button {
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
    FINAL
-===================================== */
+========================================================= */
 
 .final-screen {
     position: fixed;
@@ -1320,15 +1766,17 @@ button:active {
     z-index: 150;
 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
-    padding: 25px 16px;
+    padding:
+        35px 16px
+        50px;
 
-    overflow: hidden;
+    overflow-y: auto;
 
     background:
         radial-gradient(
-            circle at 50% 30%,
+            circle at 50% 20%,
             rgba(255,23,79,.22),
             transparent 38%
         ),
@@ -1336,7 +1784,7 @@ button:active {
 }
 
 #confetti {
-    position: absolute;
+    position: fixed;
 
     inset: 0;
 
@@ -1344,10 +1792,12 @@ button:active {
     height: 100%;
 
     pointer-events: none;
+
+    z-index: 0;
 }
 
 .final-glow {
-    position: absolute;
+    position: fixed;
 
     width: 300px;
     height: 300px;
@@ -1357,24 +1807,31 @@ button:active {
     filter: blur(150px);
 
     opacity: .16;
+
+    pointer-events: none;
 }
 
 .final-content {
     position: relative;
 
     width: 100%;
+
     max-width: 450px;
 
     text-align: center;
 
+    z-index: 2;
+
     animation:
-        finalIn 1s cubic-bezier(.2,.8,.2,1);
+        finalIn 1s
+        cubic-bezier(.2,.8,.2,1);
 }
 
 @keyframes finalIn {
 
     from {
         opacity: 0;
+
         transform:
             translateY(30px)
             scale(.92);
@@ -1382,10 +1839,12 @@ button:active {
 
     to {
         opacity: 1;
+
         transform:
             translateY(0)
             scale(1);
     }
+
 }
 
 .final-badge {
@@ -1425,6 +1884,7 @@ button:active {
 
 .final-check {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1439,13 +1899,32 @@ button:active {
 
     font-size: 44px;
 
-    border: 2px solid var(--red);
+    border:
+        2px solid
+        var(--red);
 
     box-shadow:
         0 0 35px
         rgba(255,23,79,.55),
+
         inset 0 0 25px
         rgba(255,23,79,.15);
+
+    animation:
+        finalPulse 2s infinite;
+}
+
+@keyframes finalPulse {
+
+    50% {
+        transform:
+            scale(1.06);
+
+        box-shadow:
+            0 0 65px
+            rgba(255,23,79,.7);
+    }
+
 }
 
 .final-small {
@@ -1488,12 +1967,149 @@ button:active {
     font-size: 13px;
 }
 
-.final-main strong {
-    color: white;
+
+/* =========================================================
+   CLUES
+========================================================= */
+
+.clues-title {
+    margin-top: 28px;
+
+    color: #777783;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: .25em;
 }
 
-.reward-card {
-    margin-top: 22px;
+.clues-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.clue-card {
+    position: relative;
+
+    min-height: 68px;
+
+    padding: 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color: white;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        .3s ease;
+}
+
+.clue-card:hover {
+    border-color:
+        rgba(255,23,79,.4);
+
+    transform:
+        translateY(-2px);
+}
+
+.clue-number {
+    position: absolute;
+
+    top: 7px;
+    left: 9px;
+
+    color: #555560;
+
+    font-size: 7px;
+
+    font-weight: 900;
+}
+
+.clue-hidden {
+    display: block;
+
+    padding-top: 15px;
+
+    color: #777783;
+
+    font-size: 7px;
+
+    font-weight: 900;
+
+    letter-spacing: .15em;
+}
+
+.clue-value {
+    display: block;
+
+    margin-top: 5px;
+
+    opacity: 0;
+
+    transform:
+        translateY(8px);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition:
+        .35s ease;
+}
+
+.clue-card.collected {
+    border-color:
+        rgba(255,23,79,.55);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,23,79,.15),
+            rgba(255,255,255,.035)
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(255,23,79,.12);
+}
+
+.clue-card.collected .clue-hidden {
+    display: none;
+}
+
+.clue-card.collected .clue-value {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   ASSEMBLED MESSAGE
+========================================================= */
+
+.assembled-message {
+    margin-top: 18px;
 
     padding: 18px;
 
@@ -1501,19 +2117,29 @@ button:active {
 
     border:
         1px solid
-        rgba(255,23,79,.2);
+        rgba(255,255,255,.09);
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,23,79,.12),
-            rgba(255,255,255,.035)
+            rgba(255,255,255,.055),
+            rgba(255,23,79,.045)
         );
+
+    transition:
+        .5s ease;
 }
 
-.reward-card span {
-    display: block;
+.assembled-message.message-complete {
+    border-color:
+        rgba(0,255,157,.45);
 
+    box-shadow:
+        0 0 35px
+        rgba(0,255,157,.12);
+}
+
+.assembled-label {
     color: #777783;
 
     font-size: 8px;
@@ -1523,42 +2149,82 @@ button:active {
     letter-spacing: .2em;
 }
 
-.reward-card strong {
-    display: block;
-
-    margin-top: 6px;
+.assembled-text {
+    margin-top: 10px;
 
     color: white;
 
-    font-size: 26px;
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    font-weight: 700;
+}
+
+.message-complete .assembled-text {
+    color: #fff;
 
     text-shadow:
-        0 0 20px
-        rgba(255,23,79,.35);
+        0 0 18px
+        rgba(255,23,79,.3);
 }
 
-.final-message {
+
+/* =========================================================
+   AGENT TITLE
+========================================================= */
+
+.agent-title {
     margin-top: 20px;
+
+    padding: 14px;
+
+    border-radius: 14px;
 
     color: white;
 
-    font-size: 17px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,23,79,.15),
+            rgba(88,101,255,.12)
+        );
 
-    font-weight: 800;
+    border:
+        1px solid
+        rgba(255,255,255,.12);
 
-    line-height: 1.5;
+    font-size: 13px;
+
+    font-weight: 950;
+
+    letter-spacing: .08em;
+
+    animation:
+        agentAppear .8s
+        cubic-bezier(.2,.8,.2,1);
 }
 
-.final-message small {
-    display: block;
+.agent-title span {
+    color: var(--red);
+}
 
-    margin-top: 8px;
+@keyframes agentAppear {
 
-    color: #777783;
+    from {
+        opacity: 0;
+        transform:
+            scale(.8);
+        filter: blur(10px);
+    }
 
-    font-size: 10px;
+    to {
+        opacity: 1;
+        transform:
+            scale(1);
+        filter: blur(0);
+    }
 
-    font-weight: 500;
 }
 
 .final-content .primary-button {
@@ -1568,9 +2234,9 @@ button:active {
 }
 
 
-/* =====================================
+/* =========================================================
    MOBILE
-===================================== */
+========================================================= */
 
 @media (max-width: 430px) {
 
@@ -1580,7 +2246,10 @@ button:active {
     }
 
     .hero-card {
-        padding: 28px 18px 18px;
+        padding:
+            28px
+            18px
+            18px;
     }
 
     .case-number {
@@ -1592,7 +2261,9 @@ button:active {
     }
 
     .stage-card {
-        padding: 19px 16px;
+        padding:
+            19px
+            16px;
     }
 
     .stage-card h2 {
@@ -1603,10 +2274,30 @@ button:active {
         font-size: 13px;
     }
 
+    .stage18-number {
+        font-size: 95px;
+    }
+
+    .stage18-content h1 {
+        font-size: 32px;
+    }
+
     .final-content h1 {
         font-size: 33px;
     }
+
+    .final-screen {
+        padding:
+            25px 12px
+            40px;
+    }
+
 }
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
 
 @media (min-width: 700px) {
 
@@ -1619,6 +2310,10 @@ button:active {
     }
 
     .hero-card {
-        padding: 45px 35px 35px;
+        padding:
+            45px
+            35px
+            35px;
     }
+
 }

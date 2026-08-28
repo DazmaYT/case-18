@@ -1,8 +1,8 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- QR scanner -->
+    <!-- QR Scanner -->
     <script
         src="https://unpkg.com/html5-qrcode"
         defer
@@ -22,7 +22,7 @@
 
     <script src="script.js" defer></script>
 </head>
-<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
 <body>
 
 <div class="background">
@@ -36,9 +36,7 @@
 
 <main class="app">
 
-    <!-- ========================= -->
     <!-- HEADER -->
-    <!-- ========================= -->
 
     <header class="topbar">
 
@@ -59,14 +57,9 @@
     </header>
 
 
-    <!-- ========================= -->
     <!-- START -->
-    <!-- ========================= -->
 
-    <section
-        id="startScreen"
-        class="screen active"
-    >
+    <section id="startScreen" class="screen active">
 
         <div class="hero-card glass">
 
@@ -123,14 +116,9 @@
     </section>
 
 
-    <!-- ========================= -->
     <!-- GAME -->
-    <!-- ========================= -->
 
-    <section
-        id="gameScreen"
-        class="screen"
-    >
+    <section id="gameScreen" class="screen">
 
         <div class="case-header">
 
@@ -234,6 +222,14 @@
                 <span>→</span>
             </button>
 
+            <button
+                id="resetGameButton"
+                class="reset-button"
+                type="button"
+            >
+                ↻ НАЧАТЬ ЗАНОВО
+            </button>
+
         </article>
 
 
@@ -252,9 +248,7 @@
     </section>
 
 
-    <!-- ========================= -->
     <!-- SCANNER -->
-    <!-- ========================= -->
 
     <section
         id="scannerScreen"
@@ -282,7 +276,6 @@
             </div>
 
         </div>
-
 
         <div class="scanner-card glass">
 
@@ -318,9 +311,7 @@
     </section>
 
 
-    <!-- ========================= -->
     <!-- ACCESS -->
-    <!-- ========================= -->
 
     <section
         id="accessScreen"
@@ -353,24 +344,87 @@
     </section>
 
 
-    <!-- ========================= -->
     <!-- ERROR -->
-    <!-- ========================= -->
 
     <div
         id="errorToast"
         class="toast error-toast"
     >
         <span>✕</span>
+
         <span id="errorText">
             Неверный QR-код
         </span>
     </div>
 
 
-    <!-- ========================= -->
+    <!-- SECRET FINAL 17 → 18 -->
+
+    <section
+        id="secretFinalScreen"
+        class="screen secret-final-screen"
+    >
+
+        <div class="secret-number">
+            18
+        </div>
+
+        <div class="secret-line"></div>
+
+        <div class="secret-text">
+            ПОСЛЕДНИЙ ПРОТОКОЛ
+        </div>
+
+    </section>
+
+
+    <!-- STAGE 18 -->
+
+    <section
+        id="stage18Screen"
+        class="screen stage18-screen"
+    >
+
+        <div class="stage18-content">
+
+            <div class="stage18-top">
+                CASE / 18
+            </div>
+
+            <div class="stage18-number">
+                18
+            </div>
+
+            <div class="stage18-small">
+                ФИНАЛЬНЫЙ ПРОТОКОЛ
+            </div>
+
+            <h1>
+                ПОСЛЕДНИЙ
+                <span>ЭТАП</span>
+            </h1>
+
+            <p>
+                Ты дошла до самого конца.
+                Но настоящее поздравление
+                ещё нужно собрать.
+            </p>
+
+            <button
+                id="startFinalButton"
+                class="primary-button"
+                type="button"
+            >
+                ОТКРЫТЬ ФИНАЛ
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
     <!-- FINAL -->
-    <!-- ========================= -->
 
     <section
         id="finalScreen"
@@ -405,33 +459,53 @@
             </h1>
 
             <p class="final-main">
-                Ты прошла все
-                <strong>18 испытаний.</strong>
+                Все 18 испытаний пройдены.
             </p>
 
-            <div class="reward-card">
 
-                <span>
-                    ТВОЯ НАГРАДА
-                </span>
+            <!-- CLUES -->
 
-                <strong>
-                    💰 18 000 ₸
-                </strong>
+            <div class="clues-title">
+                СЕКРЕТНЫЕ УЛИКИ
+            </div>
+
+            <div
+                id="cluesContainer"
+                class="clues-container"
+            ></div>
+
+
+            <!-- BUILT MESSAGE -->
+
+            <div
+                id="assembledMessage"
+                class="assembled-message"
+            >
+
+                <div class="assembled-label">
+                    ФИНАЛЬНОЕ ПОЗДРАВЛЕНИЕ
+                </div>
+
+                <div
+                    id="assembledText"
+                    class="assembled-text"
+                >
+                    Собери все улики...
+                </div>
 
             </div>
 
-            <div class="final-message">
 
-                ❤️ С 18-летием,
-                сестрёнка!
+            <!-- TITLE -->
 
-                <small>
-                    Дело закрыто.
-                    Но приключения только начинаются.
-                </small>
-
+            <div
+                id="agentTitle"
+                class="agent-title hidden"
+            >
+                🏅 АГЕНТ №18
+                <span>— ДЕЛО ЗАКРЫТО</span>
             </div>
+
 
             <button
                 id="restartButton"
@@ -446,7 +520,6 @@
     </section>
 
 </main>
-<script src="https://unpkg.com/html5-qrcode"></script>
-<script src="script.js"></script>
+
 </body>
 </html>
