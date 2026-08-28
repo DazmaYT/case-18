@@ -1,0 +1,451 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#050507">
+
+    <title>ДЕЛО №18</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR scanner -->
+    <script
+        src="https://unpkg.com/html5-qrcode"
+        defer
+    ></script>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div id="particles"></div>
+</div>
+
+<div class="noise"></div>
+
+<main class="app">
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+            <span class="brand-dot"></span>
+            <span>CASE №18</span>
+        </div>
+
+        <button
+            id="soundButton"
+            class="icon-button"
+            type="button"
+            aria-label="Звук"
+        >
+            🔊
+        </button>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- START -->
+    <!-- ========================= -->
+
+    <section
+        id="startScreen"
+        class="screen active"
+    >
+
+        <div class="hero-card glass">
+
+            <div class="classified">
+                CLASSIFIED
+            </div>
+
+            <div class="case-number">
+                №18
+            </div>
+
+            <h1>
+                ДЕЛО
+                <span>№18</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Секретное расследование
+                начинается сейчас.
+            </p>
+
+            <div class="start-line"></div>
+
+            <p class="hero-description">
+                Перед тобой серия из 18 испытаний.
+                Следуй подсказкам, находи скрытые
+                QR-коды и открывай следующий этап.
+            </p>
+
+            <button
+                id="startButton"
+                class="primary-button"
+                type="button"
+            >
+                <span>НАЧАТЬ РАССЛЕДОВАНИЕ</span>
+                <span>→</span>
+            </button>
+
+            <button
+                id="continueButton"
+                class="secondary-button hidden"
+                type="button"
+            >
+                ПРОДОЛЖИТЬ
+            </button>
+
+        </div>
+
+        <div class="status-line">
+            <span class="status-dot"></span>
+            СИСТЕМА ГОТОВА
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- GAME -->
+    <!-- ========================= -->
+
+    <section
+        id="gameScreen"
+        class="screen"
+    >
+
+        <div class="case-header">
+
+            <div>
+                <div class="small-label">
+                    СЕКРЕТНОЕ ДЕЛО
+                </div>
+
+                <div class="case-title">
+                    CASE №18
+                </div>
+            </div>
+
+            <div
+                id="stageCounter"
+                class="stage-counter"
+            >
+                01 / 18
+            </div>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-card glass">
+
+            <div class="progress-top">
+
+                <span>
+                    ПРОГРЕСС РАССЛЕДОВАНИЯ
+                </span>
+
+                <strong id="progressPercent">
+                    0%
+                </strong>
+
+            </div>
+
+            <div class="progress-bar">
+                <div
+                    id="progressFill"
+                    class="progress-fill"
+                ></div>
+            </div>
+
+            <div
+                id="progressBlocks"
+                class="progress-blocks"
+            ></div>
+
+        </div>
+
+
+        <!-- STAGE -->
+
+        <article
+            id="stageCard"
+            class="stage-card glass"
+        >
+
+            <div class="stage-top">
+
+                <div
+                    id="stageLabel"
+                    class="stage-label"
+                >
+                    CASE / 01
+                </div>
+
+                <div
+                    id="stageLocation"
+                    class="stage-location"
+                >
+                    📍 ДОМА
+                </div>
+
+            </div>
+
+            <h2 id="stageTitle">
+                Начало расследования
+            </h2>
+
+            <div
+                id="stageContent"
+                class="stage-content"
+            ></div>
+
+            <div
+                id="stageHint"
+                class="hint-box"
+            ></div>
+
+            <button
+                id="scanButton"
+                class="scan-button"
+                type="button"
+            >
+                <span class="scan-icon">⌁</span>
+                <span>СКАНИРОВАТЬ QR</span>
+                <span>→</span>
+            </button>
+
+        </article>
+
+
+        <div class="bottom-info">
+
+            <span>
+                ⚡ Найди правильный QR-код
+            </span>
+
+            <span>
+                Система активна
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- SCANNER -->
+    <!-- ========================= -->
+
+    <section
+        id="scannerScreen"
+        class="screen scanner-screen"
+    >
+
+        <div class="scanner-header">
+
+            <button
+                id="closeScanner"
+                class="back-button"
+                type="button"
+            >
+                ←
+            </button>
+
+            <div>
+                <div class="small-label">
+                    SECURITY SCANNER
+                </div>
+
+                <h2>
+                    Сканирование
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="scanner-card glass">
+
+            <div
+                id="qr-reader"
+                class="qr-reader"
+            ></div>
+
+            <div class="scanner-frame">
+
+                <div class="corner tl"></div>
+                <div class="corner tr"></div>
+                <div class="corner bl"></div>
+                <div class="corner br"></div>
+
+                <div class="scan-line"></div>
+
+            </div>
+
+            <div class="scanner-text">
+                Наведи камеру на QR-код
+            </div>
+
+            <div
+                id="scannerStatus"
+                class="scanner-status"
+            >
+                ОЖИДАНИЕ СКАНИРОВАНИЯ
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- ACCESS -->
+    <!-- ========================= -->
+
+    <section
+        id="accessScreen"
+        class="screen access-screen"
+    >
+
+        <div class="access-content">
+
+            <div class="access-symbol">
+                ✓
+            </div>
+
+            <div class="access-small">
+                SECURITY SYSTEM
+            </div>
+
+            <h2>
+                ДОСТУП
+                <span>ПОДТВЕРЖДЁН</span>
+            </h2>
+
+            <div class="access-line"></div>
+
+            <p>
+                ДЕЛО ПРОДОЛЖАЕТСЯ...
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- ERROR -->
+    <!-- ========================= -->
+
+    <div
+        id="errorToast"
+        class="toast error-toast"
+    >
+        <span>✕</span>
+        <span id="errorText">
+            Неверный QR-код
+        </span>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FINAL -->
+    <!-- ========================= -->
+
+    <section
+        id="finalScreen"
+        class="screen final-screen"
+    >
+
+        <canvas id="confetti"></canvas>
+
+        <div class="final-glow"></div>
+
+        <div class="final-content">
+
+            <div class="final-badge">
+                CASE CLOSED
+            </div>
+
+            <div class="final-number">
+                №18
+            </div>
+
+            <div class="final-check">
+                ✓
+            </div>
+
+            <div class="final-small">
+                СЕКРЕТНОЕ ДЕЛО ЗАВЕРШЕНО
+            </div>
+
+            <h1>
+                ДЕЛО №18
+                <span>ЗАКРЫТО</span>
+            </h1>
+
+            <p class="final-main">
+                Ты прошла все
+                <strong>18 испытаний.</strong>
+            </p>
+
+            <div class="reward-card">
+
+                <span>
+                    ТВОЯ НАГРАДА
+                </span>
+
+                <strong>
+                    💰 18 000 ₸
+                </strong>
+
+            </div>
+
+            <div class="final-message">
+
+                ❤️ С 18-летием,
+                сестрёнка!
+
+                <small>
+                    Дело закрыто.
+                    Но приключения только начинаются.
+                </small>
+
+            </div>
+
+            <button
+                id="restartButton"
+                class="primary-button"
+                type="button"
+            >
+                ПРОЙТИ ЕЩЁ РАЗ
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
